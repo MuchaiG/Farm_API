@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Home — Farm API{% endblock %}
+{% block content %}
+  <section class="panel">
+    <h2>Create a sample farm (test POST)</h2>
+    <form id="farm-form">
+      <label>
+        Name
+        <input name="name" type="text" value="Demo Farm" required>
+      </label>
+      <label>
+        Location
+        <input name="location" type="text" value="Local" required>
+      </label>
+      <button type="submit">Create Farm</button>
+    </form>
+    <pre id="farm-result" class="result"></pre>
+  </section>
+
+  <section class="panel">
+    <h2>List farms (test GET)</h2>
+    <button id="list-farms">Fetch farms</button>
+    <pre id="list-result" class="result"></pre>
+  </section>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Login — Farm API{% endblock %}
+{% block content %}
+  <section class="panel">
+    <h2>Login (demo)</h2>
+    <form id="login-form">
+      <label>
+        Username
+        <input name="username" type="text" required>
+      </label>
+      <label>
+        Password
+        <input name="password" type="password" required>
+      </label>
+      <button type="submit">Log in</button>
+    </form>
+    <pre id="login-result" class="result"></pre>
+  </section>
+{% endblock %}
