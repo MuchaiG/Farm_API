@@ -18,9 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const form = new FormData(farmForm);
       const body = Object.fromEntries(form.entries());
       try {
+        const csrftoken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
         const res = await fetch('/api/farms/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            ...(csrftoken ? { 'X-CSRFToken': csrftoken } : {})
+          },
+          credentials: 'same-origin',
           body: JSON.stringify(body)
         });
         const data = await res.json();
