@@ -77,9 +77,10 @@ It provides APIs for **user management, fields, crops, planting records, and pro
     Authorization: Bearer <access_token>
 
     {
-        "name": "Muruga Farm",
+        "name": "Green Farm",
+        "owner": "Enter user id",
         "location": "Kagwe",
-        "size": 2.5
+        "size_in_acres": 2.5
     }
 
 ### 4. Create a Crop
@@ -90,21 +91,23 @@ It provides APIs for **user management, fields, crops, planting records, and pro
 
     {
         "name": "Zucchini",
-        "category": "Vegetable",
-        "growth_duration": 60
+        "crop_type": "VEG",
+        "field": "Enter field id"
     }
 
 ### 5. Record Production
 
-    POST http://127.0.0.1:8000/api/production/records/
+    POST http://127.0.0.1:8000/api/production/expenses/
     Content-Type: application/json
     Authorization: Bearer <access_token>
 
     {
         "planting": 1,
-        "harvest_date": "2025-10-19",
-        "quantity": 120,
-        "unit": "kg"
+        "category": "seeds",
+        "description": "example: 500g of Grade 1 seeds",
+        "amount": 1500.00,
+        "date_incurred": "2025-10-19"
+        
     }
 
  
